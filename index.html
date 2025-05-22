@@ -87,26 +87,43 @@
     <div class="mx-auto max-w-[1440px]">
       <!-- banner -->
       <div>
-        <div class="relative h-[400px] md:h-auto flex justify-center overflow-hidden">
-          <img src="assets/banner_1.png" alt="banner" class="h-full w-auto max-w-none mx-auto md:w-full" />
-          <p class="block md:hidden bottom-[0] translate-y-[-10px] absolute">
-            <img src="assets/banner_scroll.svg" class="size-full filter invert drop-shadow-[0_0_5px_black]" />
+        <div
+          x-data="carousel()"
+          x-init="init($el)"
+          data-images='["assets/banner_1.png","assets/banner_2.png","assets/banner_3.png","assets/banner_4.png"]'
+          class="relative h-[400px] md:h-auto overflow-hidden md:aspect-[1440/600]"
+        >
+          <template x-for="(img, index) in images" :key="index">
+            <img
+              :src="img"
+              class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-full w-auto max-w-none md:w-full transition-opacity duration-1000"
+              :class="current === index ? 'opacity-100 z-10' : 'opacity-0 z-0'"
+              style="transition-property: opacity;"
+              alt=""
+            />
+          </template>
+          <!-- scroll icon phone -->
+          <p class="block md:hidden bottom-[0] absolute left-1/2 transform -translate-x-1/2 translate-y-[-10px] z-20">
+            <img src="assets/banner_scroll.svg" class="size-full filter invert drop-shadow-[0_0_5px_black]" alt="" />
           </p>
         </div>
         <div
           class="flex flex-col items-center h-[min(8.5rem,136px)] md:h-[min(23.5rem,375px)] bg-no-repeat bg-[25%_35%] md:bg-[center_70%] bg-[length:800px] md:bg-[length:100%]"
           style="background-image: url('assets/banner_bg.png');">
+          <!-- japanese title phone -->
           <div class="block md:hidden flex flex-col items-center flex-grow mt-[min(1.875rem,30px)]">
             <p class="font-cactus-classical-serif text-[min(1.5rem,20px)] leading-snug text-center tracking-[0.2em]">
               「特別な瞬間」<br>を一生の思い出に
             </p>
           </div>
+          <!-- japanese title -->
           <p class="hidden md:block font-cactus-classical-serif text-[min(3rem,40px)] tracking-[0.2em] md:mt-[min(4.375rem,70px)]">
             「特別な瞬間」を一生の思い出に
           </p>
           <p class="font-cactus-classical-serif text-[min(0.75rem,12px)] md:text-[min(1.5rem,20px)] bottom-4 md:static tracking-[0.2em] md:mt-[min(2.5rem,40px)]">
             將「特別的瞬間」變成一生的回憶
           </p>
+          <!-- scroll icon -->
           <p class="hidden md:block md:mt-[min(3.125rem,50px)]">
             <img src="assets/banner_scroll.svg" class="size-full" />
           </p>
@@ -193,4 +210,24 @@
       COPYRIGHT ©DECOLLTE PHOTOGRAPHY CO.,LTD ALL RIGHTS RESERVED.
     </footer>
   </body>
+  <script defer>
+    function carousel() {
+      return {
+        images: [],
+        current: 0,
+        interval: null,
+        init(el) {
+          if (el) {
+            // 從 data-images 屬性讀圖片陣列，並轉成陣列
+            this.images = JSON.parse(el.getAttribute('data-images'))
+
+             // 啟動輪播
+            this.interval = setInterval(() => {
+              this.current = (this.current + 1) % this.images.length
+            }, 5000)
+          }
+        }
+      }
+    }
+  </script>
 </html>
