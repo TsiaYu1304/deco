@@ -56,6 +56,14 @@
         .text-caption {
           @apply leading-[160%] tracking-[0.2rem]
         }
+
+        .custom-heading-en {
+          @apply font-noto-sans-hk font-light leading-[130%] tracking-[0.1em] text-[min(0.625rem,10px)] md:text-[min(1rem,16px)];
+        }
+
+        .custom-heading-zh {
+          @apply font-noto-serif-hk font-normal leading-[130%] tracking-[0.2em] text-[min(1.75rem,28px)] md:text-[min(2.25rem,36px)] mt-[min(0.625rem,10px)];
+        }
       }
     </style>
   </head>
@@ -85,7 +93,7 @@
           </p>
         </div>
         <div
-          class="flex flex-col items-center min-h-[min(8.5rem,136px)] md:h-[min(23.5rem,375px)] bg-no-repeat bg-[25%_35%] md:bg-[center_70%] bg-[length:800px] md:bg-[length:100%]"
+          class="flex flex-col items-center h-[min(8.5rem,136px)] md:h-[min(23.5rem,375px)] bg-no-repeat bg-[25%_35%] md:bg-[center_70%] bg-[length:800px] md:bg-[length:100%]"
           style="background-image: url('assets/banner_bg.png');">
           <div class="block md:hidden flex flex-col items-center flex-grow mt-[min(1.875rem,30px)]">
             <p class="font-cactus-classical-serif text-[min(1.5rem,20px)] leading-snug text-center tracking-[0.2em]">
@@ -103,7 +111,80 @@
           </p>
         </div>
       </div>
+
+      <div class="mt-[min(3.125rem,50px)] mb-[min(3.125rem,50px)] md:mt-[min(6.25rem,100px)] md:mb-[min(6.25rem,100px)] px-[30px] md:px-[9.7%]">
+        <h2 class="custom-heading-en text-center">Service</h2>
+        <h1 class="hidden md:block custom-heading-zh text-center">DE&Co.服務特色</h1>
+        <h1 class="block md:hidden custom-heading-zh text-center">DE&Co.<br>服務特色</h1>
+        <div class="grid grid-cols-1 md:grid-cols-4 mt-[min(1.875rem,30px)] md:mt-[min(4.68rem,75px)]">
+          <div class="flex justify-self-start md:justify-self-center -ml-4 md:ml-0">
+            <div class="flex flex-col items-center -mr-1 md:mr-2">
+              <div class="w-10 -mt-0.5 flex items-center justify-center font-noto-serif-hk font-light text-[min(1.15rem,14px)] md:text-[min(1.5rem,20px)] md:static tracking-[0.1em]">01</div>
+              <div class="w-[0.5px] md:w-px bg-black mt-1 md:mt-2 h-[min(4.68rem,75px)] md:h-[min(14.5rem,235px)]"></div>
+            </div>
+            <div class="flex flex-col items-start">
+              <div class="h-[min(6.25rem,100px)] md:h-[min(18.75rem,300px)] overflow-hidden">
+                <img src="assets/service_1.png" alt="交通" class="w-auto object-cover h-[min(18.75rem,300px)]" />
+              </div>
+              <div class="mt-[min(0.625rem,10px)] md:mt-4 text-left text-[min(0.625rem,10px)] md:text-[min(0.75rem,12px)] font-noto-sans-hk tracking-[0.2em] leading-[1.6] ">
+                <p class="whitespace-nowrap">全方案皆含完整服務</p>
+                <p class="whitespace-nowrap">（交通、妝髮、翻譯）</p>
+                <p class="whitespace-nowrap">拍攝當天無任何額外隱藏收費</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row-reverse md:flex-row justify-self-end md:justify-self-center mt-[min(1.25rem,20px)] md:mt-0 -mr-4 md:mr-0">
+            <div class="flex flex-col items-center md:mr-2">
+              <div class="w-10 -mt-0.5 flex items-center justify-center font-noto-serif-hk font-light text-[min(1.15rem,14px)] md:text-[min(1.5rem,20px)] md:static tracking-[0.1em]">02</div>
+              <div class="w-[0.5px] md:w-px bg-black mt-1 md:mt-2 h-[min(4.68rem,75px)] md:h-[min(14.5rem,235px)]"></div>
+            </div>
+            <div class="flex flex-col items-start -mr-1 md:mr-0">
+              <div class="h-[min(6.25rem,100px)] md:h-[min(18.75rem,300px)] overflow-hidden">
+                <img src="assets/service_2.png" alt="服裝" class="w-auto object-cover h-[min(18.75rem,300px)] translate-y-[-20px] md:translate-y-0" />
+              </div>
+              <div class="mt-[min(0.625rem,10px)] md:mt-4 text-left text-[min(0.625rem,10px)] md:text-[min(0.75rem,12px)] font-noto-sans-hk tracking-[0.2em] leading-[1.6] ">
+                <p class="whitespace-nowrap">網上預覽婚紗及和服款式</p>
+                <p class="whitespace-nowrap">日本當地提供超過8000款選擇</p>
+                <p class="whitespace-nowrap">無需攜帶繁重行李，即可出行</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-self-start md:justify-self-center mt-[min(1.25rem,20px)] md:mt-0 md:ml-[13.33px] -ml-4 md:ml-0">
+            <div class="flex flex-col items-center -mr-1 md:mr-2">
+              <div class="w-10 -mt-0.5 flex items-center justify-center font-noto-serif-hk font-light text-[min(1.15rem,14px)] md:text-[min(1.5rem,20px)] md:static tracking-[0.1em]">03</div>
+              <div class="w-[0.5px] md:w-px bg-black mt-1 md:mt-2 h-[min(4.68rem,75px)] md:h-[min(14.5rem,235px)]"></div>
+            </div>
+            <div class="flex flex-col items-start">
+              <div class="h-[min(6.25rem,100px)] md:h-[min(18.75rem,300px)] overflow-hidden">
+                <img src="assets/service_3.png" alt="交通" class="w-auto object-cover h-[min(18.75rem,300px)] translate-y-[-50px] md:translate-y-0" />
+              </div>
+              <div class="mt-[min(0.625rem,10px)] md:mt-4 text-left text-[min(0.625rem,10px)] md:text-[min(0.75rem,12px)] font-noto-sans-hk tracking-[0.2em] leading-[1.6] ">
+                <p class="whitespace-nowrap">拍攝全程合法安心</p>
+                <p class="whitespace-nowrap">超過千個室內外拍攝地點自由選擇</p>
+                <p class="whitespace-nowrap">並協助取得當地合法拍攝許可</p>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-row-reverse md:flex-row justify-self-end md:justify-self-center mt-[min(1.25rem,20px)] md:mt-0 -mr-4 md:mr-0">
+            <div class="flex flex-col items-center md:mr-2">
+              <div class="w-10 -mt-0.5 flex items-center justify-center font-noto-serif-hk font-light text-[min(1.15rem,14px)] md:text-[min(1.5rem,20px)] md:static tracking-[0.1em]">04</div>
+              <div class="w-[0.5px] md:w-px bg-black mt-1 md:mt-2 h-[min(4.68rem,75px)] md:h-[min(14.5rem,235px)]"></div>
+            </div>
+            <div class="flex flex-col items-start -mr-1 md:mr-0">
+              <div class="h-[min(6.25rem,100px)] md:h-[min(18.75rem,300px)] overflow-hidden">
+                <img src="assets/service_4.png" alt="服裝" class="w-auto object-cover h-[min(18.75rem,300px)] translate-y-[-145px] md:translate-y-0" />
+              </div>
+              <div class="mt-[min(0.625rem,10px)] md:mt-4 text-left text-[min(0.625rem,10px)] md:text-[min(0.75rem,12px)] font-noto-sans-hk tracking-[0.2em] leading-[1.6] ">
+                <p class="whitespace-nowrap">遠離人潮的隱世秘景</p>
+                <p class="whitespace-nowrap">全國25間Studio</p>
+                <p class="whitespace-nowrap">小眾城市也可輕鬆抵達拍攝</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
 
     <footer class="w-full px-7.5 md:px-0 py-5.5 md:py-10.25 text-center bg-stone-950 text-white font-cactus-classical-serif text-xxs md:text-sm leading-[130%] tracking-[0.1rem]">
       COPYRIGHT ©DECOLLTE PHOTOGRAPHY CO.,LTD ALL RIGHTS RESERVED.
