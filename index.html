@@ -259,7 +259,8 @@
         <div
           x-data="slideIndicatorCarousel()"
           class="md:hidden mt-14.5"
-        >
+        > 
+          <!-- carousel -->
           <div class="carousel w-full" x-ref="carousel" @scroll="onScroll">
             <template x-for="(customer, index) in customers" :key="`voc_${index}`">
               <div class="carousel-item w-full flex flex-col items-center justify-between gap-y-5" :id="`carousel_voc${index}`">
@@ -279,6 +280,8 @@
               </div>
             </template>
           </div>
+
+          <!-- carousel indicator -->
           <div class="flex w-full justify-center gap-2.5 py-2 mt-8">
             <template x-for="(_customer, index) in customers" :key="`voc_dot_${index}`">
               <button @click="goTo(index)" :class="{'bg-stone-950': current == index}" class="border border-stone-950 size-2.5 rounded-full"></button>
