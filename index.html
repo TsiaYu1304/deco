@@ -7,8 +7,11 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Monsieur+La+Doulaise&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+HK:wght@200..900&family=Noto+Sans+HK:wght@100..900&family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Monsieur+La+Doulaise&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+HK:wght@200..900&family=Noto+Sans+HK:wght@100..900&family=Noto+Serif+JP:wght@200..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
@@ -19,6 +22,7 @@
         --text-xxs: 0.625rem; /* text 10px */
         --font-noto-serif-hk: "Noto Serif HK", serif;
         --font-noto-serif-jp: "Noto Serif JP", serif;
+        --font-noto-sans-jp: "Noto Sans JP", sans-serif;
         --font-noto-sans-hk: "Noto Sans HK", sans-serif,;
         --font-noto-sans-tc: "Noto Sans TC", sans-serif,;
         --font-noto-sans-jp: "Noto Sans JP", sans-serif,;
@@ -171,6 +175,117 @@
         </div>
       </div>
 
+      <!-- voc -->
+      <section class="py-25"
+        x-data="{
+          customers: [
+            {
+              'img': './assets/voc_1.png',
+              'name': 'Aさん',
+              'age': '30代女性', 
+              'title': 'ヘアメイクさんの<br>提案力に大満足！',
+              'content': '担当者の提案力と技術力に感動しました。「老けて見えてしまう」「貫禄がある印象を持たれる」という私の悩みに対して、そのような印象を与えないヘアメイクを提案してくださり、人生で一番納得の行く仕上がりでした。とてもうれしかったです。',
+              'office': 'スタジオAQUA 表参道渋谷店'
+            },
+            {
+              'img': './assets/voc_2.png',
+              'name': 'Bさん',
+              'age': '20代女性',
+              'title': 'オンライン相談で<br>不安が解消された！',
+              'content': '申込の前にオンラインでのお打合せをしていただき、納得して申込ができました。当日まではメールでのやり取りでしたが、細かい質問や見積変更も含めスムーズなやり取りをしていただきました。衣装のラインナップは十分で、事前にネットで確認することができました。',
+              'office': 'スタジオSOLA 美瑛店 '
+            },
+            {
+              'img': './assets/voc_3.png',
+              'name': 'Cさん',
+              'age': '30代女性',
+              'title': '自然な笑顔の素敵<br>な写真でした！',
+              'content': '彼がカメラの前で笑うのが苦手なのですが、ふとした瞬間の笑顔をばっちりと撮っていただいていたので、自然な笑顔の素敵な写真になっていました。また、モノクロや物陰からの撮影など少しオリジナリティがあるバージョンも撮っていただき、プロならではの写真に仕上がっていたのも気に入りました。',
+              'office': 'スタジオTVB 梅田店'
+            },
+            {
+              'img': './assets/voc_4.png',
+              'name': 'Stephanie',
+              'age': '30代女性',
+              'title': 'オンライン相談で<br>不安が解消された！',
+              'content': '由查詢到揀衫，影相，成個過程都好暢順。落單之後有whatsapp group follow up，日本當地既工作人服務好好，影相嗰日超時又唔駛收錢，影咗既相都俾晒我哋，唔會影完先知原來仲有其他額外收費，亦唔會hard sell。出黎既成品都好靚，抵讚!!',
+              'office': '香港尖沙嘴 Office '
+            },
+            {
+              'img': './assets/voc_5.png',
+              'name': 'Joyce',
+              'age': '20代女性',
+              'title': '自然な笑顔の素敵<br>な写真でした！',
+              'content': '諮詢員好細心咁了解我哋兩個既想法，再推介適合我哋既拍攝地點，仲列明晒所有收費俾我哋。我哋當時仲未決定去邊度影相，佢都好細心咁講解，仲主動建議我哋不用急於決定， 過程中完全無Hard sell，令哋感到好安心。已經推薦好多朋友搵您哋！',
+              'office': '香港尖沙嘴 Office '
+            }
+          ]
+        }">
+        <div class="relative">
+          <div class="absolute top-0 md:top-8 -z-10 md:hidden"><img src="./assets/voc_sm_bg.png" class="w-full h-34" /></div>
+          <div class="absolute top-0 md:top-8 -z-10 hidden md:block"><img src="./assets/banner_bg.png" /></div>
+          <h3 class="font-noto-serif-hk text-[1.75rem] md:text-4xl leading-[130%] tracking-[0.2em] text-center">顧客心聲</h3>
+          <p class="font-noto-sans-tc md:font-noto-sans-hk mt-8.25 md:mt-7.5 text-xs md:text-xl font-light text-caption text-center whitespace-pre-line">DE&Co. 婚紗攝影的獨特魅力
+            聽聽喜愛 DE&Co. 的顧客心得分享！</p>
+        </div>
+
+        <!-- desktop -->
+        <div class="hidden md:block mt-20 px-35">
+          <div class="grid grid-cols-5 gap-x-0.5 w-full">
+            <template x-for="(customer, index) in customers" :key="`voc_${index}`">
+              <div class="flex flex-col items-center gap-y-5">
+                <img :src="customer.img" class="rounded-full w-37.5 h-37.5" />
+                <p class="flex gap-x-2.5 text-sm font-noto-sans-hk leading-[130%] tracking-[0.1em] text-center">
+                  <span x-text="customer.name"></span>
+                  <span x-text="customer.age"></span>
+                </p>
+                <p class="font-cactus-classical-serif text-center text-xl text-caption" x-html="customer.title"></p>
+                <p class="px-3 text-sm font-noto-sans-hk text-caption text-center" x-text="customer.content"></p>
+              </div>
+            </template>
+          </div>
+          <div class="grid grid-cols-5 w-full mt-5">
+            <template x-for="(customer, index) in customers" :key="`voc_${index}`">
+              <div class="flex items-end justify-center gap-x-2.5">
+                <img src="./assets/icons/location.svg" class="w-3.75 h-5" />
+                <p class="font-noto-sans-hk leading-[130%] tracking-[0.2em] text-xs" x-text="customer.office"></p>
+              </div>
+            </template>
+          </div>
+        </div>
+
+        <!-- mobile -->
+        <div
+          x-data="slideIndicatorCarousel()"
+          class="md:hidden mt-14.5"
+        >
+          <div class="carousel w-full" x-ref="carousel" @scroll="onScroll">
+            <template x-for="(customer, index) in customers" :key="`voc_${index}`">
+              <div class="carousel-item w-full flex flex-col items-center justify-between gap-y-5" :id="`carousel_voc${index}`">
+                <div class="flex flex-col items-center gap-y-5">
+                  <img :src="customer.img" class="rounded-full w-25 h-25" />
+                  <p class="flex gap-x-2.5 text-xxs font-noto-sans-hk leading-[130%] tracking-[0.1em] text-center">
+                    <span x-text="customer.name"></span>
+                    <span x-text="customer.age"></span>
+                  </p>
+                  <p class="font-cactus-classical-serif text-center text-xs text-caption" x-text="customer.title.replace('<br>', '')"></p>
+                  <p class="px-7.5 text-xxs font-noto-sans-hk text-caption text-center" x-text="customer.content"></p>
+                </div>
+                <div class="flex items-end gap-x-2.5">
+                  <img src="./assets/icons/location.svg" class="w-3.75 h-5" />
+                  <p class="font-noto-sans-hk leading-[130%] text-xxs"><span class="tracking-[0.2em]" x-text="customer.office"></span><span class="pl-2 tracking-[0.1em]">Office</span></p>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="flex w-full justify-center gap-2.5 py-2 mt-8">
+            <template x-for="(_customer, index) in customers" :key="`voc_dot_${index}`">
+              <button @click="goTo(index)" :class="{'bg-stone-950': current == index}" class="border border-stone-950 size-2.5 rounded-full"></button>
+            </template>
+          </div>
+        </div>
+      </section>
+
       <!-- service -->
       <div class="mt-[min(3.125rem,50px)] mb-[min(3.125rem,50px)] md:mt-[min(6.25rem,100px)] md:mb-[min(6.25rem,100px)] px-[30px] md:px-[9.7%]">
         <h2 class="custom-heading-en text-center">Service</h2>
@@ -244,9 +359,8 @@
           </template>
         </div>
       </div>
-
-
     </div>
+
 
     <footer class="w-full px-7.5 md:px-0 py-5.5 md:py-10.25 text-center bg-stone-950 text-white font-cactus-classical-serif text-xxs md:text-sm leading-[130%] tracking-[0.1rem]">
       COPYRIGHT ©DECOLLTE PHOTOGRAPHY CO.,LTD ALL RIGHTS RESERVED.
@@ -268,6 +382,48 @@
               this.current = (this.current + 1) % this.images.length
             }, 5000)
           }
+        }
+      }
+    }
+
+    function slideIndicatorCarousel(autoPlay){
+      return {
+        autoPlay: autoPlay || false,
+        carousel: null,
+        items: [],
+        current: 0,
+        offsetLefts: [],
+        init() {
+          this.carousel = this.$refs.carousel
+          setTimeout(() => {
+            const items = this.carousel.querySelectorAll(".carousel-item")
+            this.items = items
+            this.offsetLefts = Array.from(items).map(item => item.offsetLeft);
+            if(this.autoPlay) {
+              this.autoNextItem(this.items.length)
+            }
+          }, 100);
+        },
+        goTo(index) {
+          const left = this.offsetLefts[index];
+          this.carousel.scrollTo({ left: left })
+        },
+        onScroll(e){
+          const currentIndex = this.offsetLefts.indexOf(e.target.scrollLeft)
+          if(currentIndex >= 0){
+            this.current = currentIndex
+          }
+        },
+        autoNextItem(length){
+          setInterval(()=>{
+            if(this.current == length - 1){
+              this.current = 0
+            } else {
+              this.current += 1
+            }
+            const left = this.offsetLefts[this.current];
+            this.carousel.scrollTo({ left: left })
+          }, 5000)
         }
       }
     }
