@@ -106,8 +106,8 @@
             />
           </template>
           <!-- scroll icon phone -->
-          <div class="flex md:hidden items-center h-[min(0.875rem,14px)] absolute left-1/2 bottom-[0] transform -translate-x-1/2 translate-y-[-10px] z-20 ">
-            <span class="leading-[130%] tracking-[0.2em] font-noto-sans-jp font-normal text-white text-[min(0.625rem,10px)] drop-shadow-[0_0_5px_black]">SCROLL</span>
+          <div class="flex md:hidden items-center h-[min(0.875rem,14px)] absolute left-1/2 bottom-[0] transform -translate-x-1/2 translate-y-[-0.625rem] z-20 ">
+            <span class="leading-[130%] tracking-[0.2em] font-noto-sans-jp font-normal text-white text-[min(0.625rem,10px)] drop-shadow-[0_0_0.3125rem_black]">SCROLL</span>
             <div
               x-data
               x-init="
@@ -125,7 +125,7 @@
                   });
                 });
               "
-              class="h-full ml-[5px] drop-shadow-[0_0_5px_black]"
+              class="h-full ml-[0.3125rem] drop-shadow-[0_0_0.3125rem_black]"
             ></div>
           </div>
         </div>
@@ -165,14 +165,14 @@
                   });
                 });
               "
-              class="h-full ml-[5px]"
+              class="h-full ml-[0.3125rem]"
             ></div>
           </div>
         </div>
       </div>
 
       <!-- service -->
-      <div class="mt-[min(3.125rem,50px)] mb-[min(3.125rem,50px)] md:mt-[min(6.25rem,100px)] md:mb-[min(6.25rem,100px)] px-[30px] md:px-[9.7%]">
+      <div class="mt-[min(3.125rem,50px)] mb-[min(3.125rem,50px)] md:mt-[min(6.25rem,100px)] md:mb-[min(6.25rem,100px)] px-[9.3vw] sm:px-[10vw] md:px-[9.7vw]">
         <h2 class="custom-heading-en text-center">Service</h2>
         <h1 class="hidden md:block custom-heading-zh text-center">DE&Co.服務特色</h1>
         <h1 class="block md:hidden custom-heading-zh text-center">DE&Co.<br>服務特色</h1>
@@ -182,59 +182,68 @@
               id: '01',
               img: 'assets/service_1.png',
               alt: '交通',
-              translateY: '0px',
+              translateY: '0vw',
+              smTranslateY: '0vw',
               text: ['全方案皆含完整服務', '（交通、妝髮、翻譯）', '拍攝當天無任何額外隱藏收費']
             },
             {
               id: '02',
               img: 'assets/service_2.png',
               alt: '服裝',
-              translateY: '-20px',
+              translateY: '-6vw',
+              smTranslateY: '-2vw',
               text: ['網上預覽婚紗及和服款式', '日本當地提供超過8000款選擇', '無需攜帶繁重行李，即可出行']
             },
             {
               id: '03',
               img: 'assets/service_3.png',
               alt: '場地',
-              translateY: '-50px',
+              translateY: '-13vw',
+              smTranslateY: '-6vw',
               text: ['拍攝全程合法安心', '超過千個室內外拍攝地點自由選擇', '並協助取得當地合法拍攝許可']
             },
             {
               id: '04',
               img: 'assets/service_4.png',
               alt: '全國',
-              translateY: '-145px',
+              translateY: '-45vw',
+              smTranslateY: '-10vw',
               text: ['遠離人潮的隱世秘景', '全國25間Studio', '小眾城市也可輕鬆抵達拍攝']
             }
           ]
-        }" class="grid grid-cols-1 md:grid-cols-4 mt-[min(1.875rem,30px)] md:mt-[min(4.68rem,75px)]">
+        }" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-[min(1.875rem,30px)] md:mt-[min(4.68rem,75px)]">
           
           <template x-for="(service, index) in services" :key="service.id">
             <div
               :class="[
                 index % 2 === 0 
-                  ? 'flex justify-self-start md:justify-self-center -ml-4 md:ml-0'
-                  : 'flex flex-row-reverse md:flex-row justify-self-end md:justify-self-center -mr-4 md:mr-0',
-                index !== 0 ? 'mt-[min(1.25rem,20px)] md:mt-0' : ''
+                  ? 'flex justify-self-start sm:justify-self-center md:justify-self-start -ml-4 sm:-ml-3 md:ml-0'
+                  : 'flex flex-row-reverse sm:flex-row justify-self-end sm:justify-self-center md:justify-self-start -mr-4 sm:mr-0 sm:-ml-3 md:ml-0',
+                index !== 0 ? 'mt-[min(1.25rem,20px)] md:mt-0' : '',
+                index >= 2 ? 'sm:mt-5' : 'sm:mt-0',
               ]"
             >
               <!-- 編號 + 垂直線 -->
-              <div class="flex flex-col items-center" :class="index % 2 === 0 ? '-mr-1 md:mr-2' : 'md:mr-2'">
-                <div class="w-10 -mt-0.5 flex items-center justify-center font-noto-serif-hk font-light text-[min(1.15rem,14px)] md:text-[min(1.5rem,20px)] tracking-[0.1em]" x-text="service.id"></div>
-                <div class="w-[0.5px] md:w-px bg-black mt-1 md:mt-2 h-[min(4.68rem,75px)] md:h-[min(14.5rem,235px)]"></div>
+              <div class="flex flex-col items-center" :class="index % 2 === 0 ? '-mr-1 sm:mr-0.5 md:mr-[0.5vw] md:ml-[1vw]' : 'sm:mr-0.5 md:mr-[0.5vw] md:ml-[1vw]'">
+                <div class="w-10 sm:w-5 md:w-10 -mt-[1vw] sm:-mt-1.3 md:-mt-0.5 flex items-center justify-center font-noto-serif-hk font-light text-[4vw] sm:text-[3vw] md:text-[min(1.5rem,20px)] tracking-[0.1em]" x-text="service.id"></div>
+                <div class="w-[0.5px] md:w-[0.01vw] bg-black mt-1 md:mt-2 h-[25vw] sm:h-[22vw] md:h-[17vw]"></div>
               </div>
 
               <!-- 圖片 + 文字 -->
               <div class="flex flex-col items-start" :class="index % 2 === 0 ? '' : '-mr-1 md:mr-0'">
-                <div class="h-[min(6.25rem,100px)] md:h-[min(18.75rem,300px)] overflow-hidden">
+                <div class="aspect-[2/1] sm:aspect-square md:aspect-auto h-[31.25vw] sm:h-[27vw] md:h-[min(18.75rem,300px)] overflow-hidden">
                   <img
                     :src="service.img"
                     :alt="service.alt"
-                    class="w-auto object-cover h-[min(18.75rem,300px)] md:translate-y-0"
-                    :style="'transform: translateY(' + service.translateY + ');'"
+                    class="w-full object-cover h-auto"
+                    :style="window.innerWidth < 640
+                      ? 'transform: translateY(' + service.translateY + ');'
+                      : (window.innerWidth < 768
+                          ? 'transform: translateY(' + service.smTranslateY + ');'
+                          : '')"
                   />
                 </div>
-                <div class="mt-[min(0.625rem,10px)] md:mt-4 text-left text-[min(0.625rem,10px)] md:text-[min(0.75rem,12px)] font-noto-sans-hk tracking-[0.2em] leading-[1.6]">
+                <div class="mt-[min(0.625rem,10px)] md:mt-4 text-left text-[2.3vw] sm:text-[1.5vw] md:text-[0.89vw] font-noto-sans-hk tracking-[0.2em] leading-[1.6]">
                   <template x-for="line in service.text" :key="line">
                     <p class="whitespace-nowrap" x-text="line"></p>
                   </template>
