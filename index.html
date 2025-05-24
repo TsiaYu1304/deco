@@ -401,7 +401,7 @@
       </section>
 
       <!-- service -->
-      <div class="mt-[min(3.125rem,50px)] mb-[min(3.125rem,50px)] md:mt-[min(6.25rem,100px)] md:mb-[min(6.25rem,100px)] px-[9.3vw] sm:px-[10vw] md:px-[9.7vw]">
+      <section class="mt-[min(3.125rem,50px)] mb-[min(3.125rem,50px)] md:mt-[min(6.25rem,100px)] md:mb-[min(6.25rem,100px)] px-[9.3vw] sm:px-[10vw] md:px-[9.7vw]">
         <h2 class="custom-heading-en text-center">Service</h2>
         <h1 class="hidden md:block custom-heading-zh text-center">DE&Co.服務特色</h1>
         <h1 class="block md:hidden custom-heading-zh text-center">DE&Co.<br>服務特色</h1>
@@ -440,7 +440,7 @@
               text: ['遠離人潮的隱世秘景', '全國25間Studio', '小眾城市也可輕鬆抵達拍攝']
             }
           ]
-        }" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-[min(1.875rem,30px)] md:mt-[min(4.68rem,75px)]">
+        }" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-[min(1.875rem,30px)] md:mt-[min(4.68rem,75px)] md:gap-x-[1vw]">
           
           <template x-for="(service, index) in services" :key="service.id">
             <div
@@ -453,7 +453,12 @@
               ]"
             >
               <!-- 編號 + 垂直線 -->
-              <div class="flex flex-col items-center" :class="index % 2 === 0 ? '-mr-1 sm:mr-0.5 md:mr-[0.5vw] md:ml-[1vw]' : 'sm:mr-0.5 md:mr-[0.5vw] md:ml-[1vw]'">
+              <div
+                class="flex flex-col items-center"
+                :class="[
+                  index % 2 === 0 ? '-mr-1 sm:mr-0.5 md:mr-[0.5vw]' : 'sm:mr-0.5 md:mr-[0.5vw]',
+                ]"
+              >
                 <div class="w-10 sm:w-5 md:w-10 -mt-[1vw] sm:-mt-1.3 md:-mt-0.5 flex items-center justify-center font-noto-serif-hk font-light text-[4vw] sm:text-[3vw] md:text-[min(1.5rem,20px)] tracking-[0.1em]" x-text="service.id"></div>
                 <div class="w-[0.5px] md:w-[0.01vw] bg-black mt-1 md:mt-2 h-[25vw] sm:h-[22vw] md:h-[17vw]"></div>
               </div>
