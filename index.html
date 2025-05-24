@@ -65,12 +65,20 @@
           @apply leading-[160%] tracking-[0.2rem]
         }
 
+        .text-info {
+          @apply text-[min(0.75rem,12px)] md:text-[min(1.5rem,20px)]
+        }
+
+        .text-eng {
+          @apply leading-[130%] tracking-[0.1rem]
+        }
+
         .custom-heading-en {
-          @apply font-noto-sans-hk font-light leading-[130%] tracking-[0.1em] text-[min(0.625rem,10px)] md:text-[min(1rem,16px)];
+          @apply font-noto-sans-hk font-light text-center leading-[130%] tracking-[0.1rem] text-[min(0.625rem,10px)] md:text-[min(1rem,16px)];
         }
 
         .custom-heading-zh {
-          @apply font-noto-serif-hk font-normal leading-[130%] tracking-[0.2em] text-[min(1.75rem,28px)] md:text-[min(2.25rem,36px)] mt-[min(0.625rem,10px)];
+          @apply font-noto-serif-hk font-normal text-center leading-[130%] tracking-[0.2rem] text-[min(1.75rem,28px)] md:text-[min(2.25rem,36px)] mt-[min(0.625rem,10px)];
         }
       }
     </style>
@@ -83,7 +91,7 @@
       <div class="hidden md:block text-sm leading-[130%] tracking-[0.5rem]">
         專人為您規劃合適的攝影方案
       </div>
-      <div class="flex items-center gap-x-2.5 text-xs md:text-xl leading-[130%] tracking-[0.2rem]">
+      <div class="flex items-center gap-x-2.5 text-xs md:text-xl text-body">
         <span>立即線上諮詢</span>
         <a href="" class="flex items-center group w-4.25 h-4.25">
           <img src="./assets/icons/arrow-rignt-circle.svg" class="size-full inline-block group-hover:!hidden" />
@@ -94,9 +102,9 @@
 
     <div class="mx-auto max-w-[1440px]">
       <!-- banner -->
-      <div>
+      <section>
         <div
-          x-data="carousel()"
+          x-data="carousel({desktopEnabled: true})"
           x-init="init($el)"
           data-images='["assets/banner_1.png","assets/banner_2.png","assets/banner_3.png","assets/banner_4.png"]'
           class="relative h-[400px] md:h-auto overflow-hidden md:aspect-[1440/600]"
@@ -139,20 +147,20 @@
           style="background-image: url('assets/banner_bg.png');">
           <!-- japanese title phone -->
           <div class="block md:hidden flex flex-col items-center flex-grow mt-[min(1.875rem,30px)]">
-            <p class="font-cactus-classical-serif text-[min(1.5rem,20px)] leading-snug text-center tracking-[0.2em]">
+            <p class="font-cactus-classical-serif text-[min(1.5rem,20px)] text-center text-caption">
               「特別な瞬間」<br>を一生の思い出に
             </p>
           </div>
           <!-- japanese title -->
-          <p class="hidden md:block font-cactus-classical-serif text-[min(3rem,40px)] tracking-[0.2em] md:mt-[min(4.375rem,70px)]">
+          <p class="hidden md:block font-cactus-classical-serif text-[min(3rem,40px)] text-body md:mt-[min(4.375rem,70px)]">
             「特別な瞬間」を一生の思い出に
           </p>
-          <p class="font-cactus-classical-serif text-[min(0.75rem,12px)] md:text-[min(1.5rem,20px)] bottom-4 md:static tracking-[0.2em] md:mt-[min(2.5rem,40px)]">
+          <p class="font-cactus-classical-serif text-info text-body bottom-4 md:static md:mt-[min(2.5rem,40px)]">
             將「特別的瞬間」變成一生的回憶
           </p>
           <!-- scroll icon -->
           <div class="hidden md:flex md:mt-[min(3.125rem,50px)] items-center h-[min(1rem,16px)]">
-            <span class="leading-[130%] tracking-[0.2em] text-[min(0.75rem,12px)] font-noto-sans-jp font-normal">SCROLL</span>
+            <span class="text-body text-[min(0.75rem,12px)] font-noto-sans-jp font-normal">SCROLL</span>
             <div
               x-data
               x-init="
@@ -174,7 +182,7 @@
             ></div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!-- voc -->
       <section class="py-25"
@@ -290,6 +298,108 @@
         </div>
       </section>
 
+      <!-- appointment -->
+      <section class="mt-[min(3.125rem,50px)] mb-[min(3.125rem,50px)] md:mt-[min(6.25rem,100px)] md:mb-[min(6.25rem,100px)] px-[9.3vw] sm:px-[10vw] md:px-[9.7vw]">
+        <h2 class="custom-heading-en md:">Appointment</h2>
+        <h1 class="hidden sm:block custom-heading-zh md:text-left">提供多樣方案預約諮詢</h1>
+        <h1 class="block sm:hidden custom-heading-zh md:text-left">提供多樣方案<br>預約諮詢</h1>
+        <div
+          x-data="galleryCarousel({ 
+            dots: true, touchSwipe: true,
+            images: [
+              {
+                id: '01',
+                img: 'assets/appointment_1.png',
+                alt: '紅葉季拍攝推薦',
+              },
+              {
+                id: '02',
+                img: 'assets/appointment_2.png',
+                alt: '紅葉季拍攝推薦',
+              },
+              {
+                id: '03',
+                img: 'assets/appointment_3.png',
+                alt: '紅葉季拍攝推薦',
+              },
+              {
+                id: '04',
+                img: 'assets/appointment_4.png',
+                alt: '紅葉季拍攝推薦',
+              },
+              {
+                id: '05',
+                img: 'assets/appointment_5.png',
+                alt: '紅葉季拍攝推薦',
+              },
+              {
+                id: '06',
+                img: 'assets/appointment_6.png',
+                alt: '紅葉季拍攝推薦',
+              },
+              {
+                id: '07',
+                img: 'assets/appointment_7.png',
+                alt: '紅葉季拍攝推薦',
+              },
+              {
+                id: '08',
+                img: 'assets/appointment_8.png',
+                alt: '紅葉季拍攝推薦',
+              }
+            ]
+          })"
+          x-init="init($el)"
+          class="relative mt-[min(1.875rem,30px)] md:mt-[min(3.125rem,50px)]"
+        >
+          <!-- 輪播容器 -->
+          <div class="overflow-hidden">
+            <div
+              class="flex transition-transform duration-500"
+              :style="`width: ${pagedImages.length * 100}%; transform: translateX(-${currentPage * (100 / pagedImages.length)}%)`"
+              @touchstart="touchSwipe ? touchStart($event) : null"
+              @touchend="touchSwipe ? touchEnd($event) : null"
+            >
+              <template x-for="(page, pageIndex) in pagedImages" :key="pageIndex">
+                <!-- 用 grid 做頁面，調整列數跟欄數 -->
+                <div
+                  class="grid sm:gap-x-2 md:gap-x-4 gap-y-4 sm:gap-y-3 md:gap-y-8"
+                  :style="`
+                    width: ${100 / pagedImages.length}%;
+                    grid-template-columns: repeat(${Number(columns)}, 1fr);
+                    grid-template-rows: repeat(${Number(rows)}, 1fr);
+                  `"
+                >
+                  <template x-for="(item, idx) in page" :key="item.id || idx">
+                    <div class="flex flex-col items-start">
+                      <div class="w-full aspect-[26/15] md:aspect-[28/15] overflow-hidden mb-2 sm:mb-1.5 md:mb-3">
+                        <img
+                          :src="item.img"
+                          :alt="item.alt"
+                          class="h-full"
+                        />
+                      </div>
+                      <p x-text="item.alt" class="text-left text-info text-caption font-noto-sans-hk"></p>
+                    </div>
+                  </template>
+                </div>
+              </template>
+            </div>
+          </div>
+
+          <!-- 點點 -->
+          <div class="flex justify-center mt-6 sm:mt-4 space-x-2 md:hidden">
+            <template x-for="(dot, index) in pagedImages.length" :key="index">
+              <button
+                @click="goToPage(index)"
+                :class="index === currentPage ? 'bg-black' : 'bg-gray-400'"
+                class="w-[2.2vw] sm:w-[1.2vw] aspect-square rounded-full"
+              ></button>
+            </template>
+          </div>
+        </div>
+      </section>
+
       <!-- service -->
       <div class="mt-[min(3.125rem,50px)] mb-[min(3.125rem,50px)] md:mt-[min(6.25rem,100px)] md:mb-[min(6.25rem,100px)] px-[9.3vw] sm:px-[10vw] md:px-[9.7vw]">
         <h2 class="custom-heading-en text-center">Service</h2>
@@ -371,11 +481,12 @@
             </div>
           </template>
         </div>
-      </div>
+      </section>
+
+
     </div>
 
-
-    <footer class="w-full px-7.5 md:px-0 py-5.5 md:py-10.25 text-center bg-stone-950 text-white font-cactus-classical-serif text-xxs md:text-sm leading-[130%] tracking-[0.1rem]">
+    <footer class="w-full px-7.5 md:px-0 py-5.5 md:py-10.25 text-center bg-stone-950 text-white font-cactus-classical-serif text-xxs md:text-sm text-eng">
       COPYRIGHT ©DECOLLTE PHOTOGRAPHY CO.,LTD ALL RIGHTS RESERVED.
     </footer>
   </body>
@@ -399,46 +510,121 @@
       }
     }
 
-    function slideIndicatorCarousel(autoPlay){
+    function galleryCarousel(options = {}) {
       return {
-        autoPlay: autoPlay || false,
-        carousel: null,
-        items: [],
-        current: 0,
-        offsetLefts: [],
-        init() {
-          this.carousel = this.$refs.carousel
-          setTimeout(() => {
-            const items = this.carousel.querySelectorAll(".carousel-item")
-            this.items = items
-            this.offsetLefts = Array.from(items).map(item => item.offsetLeft);
-            if(this.autoPlay) {
-              this.autoNextItem(this.items.length)
+        images: options.images || [],
+        currentPage: 0,
+        startX: 0,
+        endX: 0,
+        screenWidthReactive: window.innerWidth,
+
+        dots: options.dots ?? false,
+        arrows: options.arrows ?? false,
+        touchSwipe: options.touchSwipe ?? false,
+        pauseOnHover: options.pauseOnHover ?? false,
+        autoPlay: options.autoPlay ?? false,
+        
+        // 外部可傳入的 columns 和 rows 預設值
+        defaultColumns: options.columns ?? null,  // options.columns 可以是數字（固定欄數），也可以是物件，或是 null
+        defaultRows: options.rows ?? 2,
+
+        get screenWidth() {
+          return this.screenWidthReactive;
+        },
+
+        get columns() {
+          if (this.defaultColumns !== null) {
+            if (typeof this.defaultColumns === 'number') {
+              return this.defaultColumns;  // 固定欄數
             }
-          }, 100);
+            if (typeof this.defaultColumns === 'object') {
+              // 判斷螢幕寬度回傳對應欄數
+              if (this.screenWidth >= 768) return this.defaultColumns.desktop ?? 4;
+              else if (this.screenWidth >= 640) return this.defaultColumns.tablet ?? 2;
+              else return this.defaultColumns.mobile ?? 1;
+            }
+          }
+
+          // 預設行為（沒傳 defaultColumns）
+          if (this.screenWidth >= 768) return 4;
+          else if (this.screenWidth >= 640) return 2;
+          else return 1;
         },
-        goTo(index) {
-          const left = this.offsetLefts[index];
-          this.carousel.scrollTo({ left: left })
+
+        get rows() {
+          return this.defaultRows;
         },
-        onScroll(e){
-          const currentIndex = this.offsetLefts.indexOf(e.target.scrollLeft)
-          if(currentIndex >= 0){
-            this.current = currentIndex
+
+        get itemsPerPage() {
+          return this.columns * this.rows;
+        },
+
+        get pagedImages() {
+          const pages = [];
+          for (let i = 0; i < this.images.length; i += this.itemsPerPage) {
+            pages.push(this.images.slice(i, i + this.itemsPerPage));
+          }
+          return pages;
+        },
+
+        get totalPages() {
+          return this.pagedImages.length;
+        },
+        
+        init(el) {
+          window.addEventListener('resize', () => {
+            this.screenWidthReactive = window.innerWidth;
+            this.currentPage = 0;
+          });
+  
+          if (this.autoPlay && this.totalPages > 1) {
+            this.startAutoPlay();
           }
         },
-        autoNextItem(length){
-          setInterval(()=>{
-            if(this.current == length - 1){
-              this.current = 0
-            } else {
-              this.current += 1
-            }
-            const left = this.offsetLefts[this.current];
-            this.carousel.scrollTo({ left: left })
-          }, 5000)
-        }
-      }
+
+        startAutoPlay() {
+          this.stopAutoPlay();
+          this.interval = setInterval(() => {
+            this.currentPage = (this.currentPage + 1) % this.totalPages;
+          }, 1000);
+        },
+
+        stopAutoPlay() {
+          if (this.interval) {
+            clearInterval(this.interval);
+            this.interval = null;
+          }
+        },
+
+        goToPage(page) {
+          if (page < 0) page = 0;
+          else if (page >= this.pagedImages.length) page = this.pagedImages.length - 1;
+          this.currentPage = page;
+
+          if (this.autoPlay) {
+            this.stopAutoPlay();
+            setTimeout(() => this.startAutoPlay(), 2000);
+          }
+        },
+
+        touchStart(e) {
+          if (this.autoPlay) this.stopAutoPlay();
+          this.startX = e.touches[0].clientX;
+        },
+
+        touchEnd(e) {
+          this.endX = e.changedTouches[0].clientX;
+          const diff = this.endX - this.startX;
+          if (Math.abs(diff) > 30) {
+            if (diff > 0) this.goToPage(this.currentPage - 1);
+            else this.goToPage(this.currentPage + 1);
+          }
+          if (this.autoPlay) {
+            setTimeout(() => this.startAutoPlay(), 2000);
+          }
+        },
+      };
     }
+
   </script>
 </html>
