@@ -515,6 +515,48 @@
       }
     }
 
+    function slideIndicatorCarousel(autoPlay){
+      return {
+        autoPlay: autoPlay || false,
+        carousel: null,
+        items: [],
+        current: 0,
+        offsetLefts: [],
+        init() {
+          this.carousel = this.$refs.carousel
+          setTimeout(() => {
+            const items = this.carousel.querySelectorAll(".carousel-item")
+            this.items = items
+            this.offsetLefts = Array.from(items).map(item => item.offsetLeft);
+            if(this.autoPlay) {
+              this.autoNextItem(this.items.length)
+            }
+          }, 100);
+        },
+        goTo(index) {
+          const left = this.offsetLefts[index];
+          this.carousel.scrollTo({ left: left })
+        },
+        onScroll(e){
+          const currentIndex = this.offsetLefts.indexOf(e.target.scrollLeft)
+          if(currentIndex >= 0){
+            this.current = currentIndex
+          }
+        },
+        autoNextItem(length){
+          setInterval(()=>{
+            if(this.current == length - 1){
+              this.current = 0
+            } else {
+              this.current += 1
+            }
+            const left = this.offsetLefts[this.current];
+            this.carousel.scrollTo({ left: left })
+          }, 5000)
+        }
+      }
+    }
+
     function galleryCarousel(options = {}) {
       return {
         images: options.images || [],
