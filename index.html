@@ -571,8 +571,11 @@
         pauseOnHover: options.pauseOnHover ?? false,
         autoPlay: options.autoPlay ?? false,
         
-        // 外部可傳入的 columns 和 rows 預設值
-        defaultColumns: options.columns ?? null,  // options.columns 可以是數字（固定欄數），也可以是物件，或是 null
+        // 使用哪種排版
+        layout: options.layout ?? 'grid', 
+        
+        // 外部可傳入的 columns 和 rows 預設值，用於圖片排版
+        defaultColumns: options.columns ?? null,
         defaultRows: options.rows ?? 2,
 
         get screenWidth() {
@@ -603,6 +606,12 @@
         },
 
         get itemsPerPage() {
+          // flex 直接用欄數當一頁的張數
+          if (this.layout === 'flex') {
+            return this.columns;
+          }
+
+          // grid 一頁有 columns x rows 張圖
           return this.columns * this.rows;
         },
 
@@ -618,7 +627,7 @@
           return this.pagedImages.length;
         },
         
-        init(el) {
+        init() {
           window.addEventListener('resize', () => {
             this.screenWidthReactive = window.innerWidth;
             this.currentPage = 0;
@@ -633,7 +642,7 @@
           this.stopAutoPlay();
           this.interval = setInterval(() => {
             this.currentPage = (this.currentPage + 1) % this.totalPages;
-          }, 1000);
+          }, 5000);
         },
 
         stopAutoPlay() {

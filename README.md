@@ -24,6 +24,7 @@
 - `touchSwipe`：是否啟用觸控滑動切換，預設 `false`
 - `pauseOnHover`：滑鼠懸停是否暫停自動播放，預設 `false`
 - `autoPlay`：是否啟用自動播放，預設 `false`
+- `layout`：排版方法(flex/grid)，預設`grid`
 - `columns`：圖片欄數，可設定數字或物件，預設 `{ mobile: 1, tablet: 2, desktop: 4 }`  
   - 物件可只設定部分欄位，未設定欄位會使用預設值補齊
 - `rows`：圖片列數，預設 `2`
@@ -77,7 +78,17 @@
         >
           <template x-for="item in page" :key="item.id">
             <div class="p-2 bg-gray-100 rounded">
-              <img :src="item.img" :alt="item.alt" class="w-full h-40 object-cover rounded" />
+              <img :src="item.img" :alt="item.alt" class="w-auto h-full" />
+              <p class="text-sm text-center mt-1" x-text="item.alt"></p>
+            </div>
+          </template>
+        </div>
+
+        <!-- 用 flex 做頁面 -->
+        <div class="flex flex-wrap justify-center gap-4">
+          <template x-for="img in pagedImages[currentPage]" :key="img">
+            <div :style="`flex: 0 0 ${100 / columns}%`">
+              <img :src="item.img" :alt="item.alt" class="w-auto h-full" />
               <p class="text-sm text-center mt-1" x-text="item.alt"></p>
             </div>
           </template>
