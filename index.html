@@ -13,9 +13,15 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
+    <!-- swiper -->
+    <link href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+
+    
 
 
     <style type="text/tailwindcss">
@@ -80,6 +86,18 @@
         .custom-heading-zh {
           @apply font-noto-serif-hk font-normal text-center leading-[130%] tracking-[0.2rem] text-[min(1.75rem,28px)] md:text-[min(2.25rem,36px)] mt-[min(0.625rem,10px)];
         }
+      }
+    </style>
+    <style>
+      .swiper-pagination-bullet {
+        background: white !important; 
+        border: 1px solid #4D403E;
+        opacity: 1 !important;  
+      }
+  
+      .swiper-pagination-bullet-active {
+        background: #4D403E !important; 
+        transform: scale(1.2);
       }
     </style>
   </head>
@@ -288,7 +306,146 @@
             </template>
           </div>
         </div>
-      </section>
+        <!-- mobile -->
+        <div class="flex md:hidden">
+          <!--HTML CODE-->
+          <div class="w-full relative">
+            <div class="swiper default-carousel swiper-container">
+              <div class="swiper-wrapper">
+                <!--item 1-->
+                <div class="swiper-slide">
+                  <div class="flex justify-center items-center">
+                    <div class="flex-col">
+                      <h2 class="text-4xl font-serif mb-[1.25rem] flex items-center justify-center">
+                        <span class="font-noto-serif-hk font-bold
+                            text-[1.25rem] leading-[92%] tracking-[0.125rem] mr-[0.625rem]"
+                          x-text="items[0].step"></span>&nbsp;
+                        <span class="font-monsieur-la-doulaise font-normal
+                            text-[1.25rem] leading-[74%] tracking-[0.125rem]">step.</span>
+                      </h2>
+                      <p class="mx-[10%] text-center text-[1.25rem] mb-[1.25rem] font-noto-serif-hk font-normal leading-[130%] tracking-[0.25rem]"
+                        x-text="items[0].title"></p>
+                      <p class="h-[5rem] mx-[10%] text-center text-[0.75rem] mb-[1.875rem] font-noto-sans-tc font-light leading-[160%] tracking-[0.125rem]"
+                        x-text="items[0].desc"></p>
+                      <img :src="items[0].image" class="mb-[3.375rem] w-full h-[6.25rem] object-cover" alt="">
+                    </div>
+                  </div>
+                </div>
+                <!--item 2-->
+                <div class="swiper-slide">
+                  <div class="flex justify-center items-center">
+                    <div class="flex-col">
+                      <h2 class="text-4xl font-serif mb-[1.25rem] flex items-center justify-center">
+                        <span class="font-noto-serif-hk font-bold
+                            text-[1.25rem] leading-[92%] tracking-[0.125rem] mr-[0.625rem]"
+                          x-text="items[1].step"></span>&nbsp;
+                        <span class="font-monsieur-la-doulaise font-normal
+                            text-[1.25rem] leading-[74%] tracking-[0.125rem]">step.</span>
+                      </h2>
+                      <p class="mx-[10%] text-center text-[1.25rem] mb-[1.25rem] font-noto-serif-hk font-normal leading-[130%] tracking-[0.25rem]"
+                        x-text="items[1].title"></p>
+                      <p class="h-[5rem] mx-[10%] text-center text-[0.75rem] mb-[1.875rem] font-noto-sans-tc font-light leading-[160%] tracking-[0.125rem]"
+                        x-text="items[1].desc"></p>
+                      <img :src="items[1].image" class="mb-[3.375rem] w-full h-[6.25rem] object-cover" alt="">
+                    </div>
+                  </div>
+                </div>
+                <!--item 3-->
+                <div class="swiper-slide">
+                  <div class="flex justify-center items-center">
+                    <div class="flex-col">
+                      <h2 class="text-4xl font-serif mb-[1.25rem] flex items-center justify-center">
+                        <span class="font-noto-serif-hk font-bold
+                            text-[1.25rem] leading-[92%] tracking-[0.125rem] mr-[0.625rem]"
+                          x-text="items[2].step"></span>&nbsp;
+                        <span class="font-monsieur-la-doulaise font-normal
+                            text-[1.25rem] leading-[74%] tracking-[0.125rem]">step.</span>
+                      </h2>
+                      <p class="mx-[10%] text-center text-[1.25rem] mb-[1.25rem] font-noto-serif-hk font-normal leading-[130%] tracking-[0.25rem]"
+                        x-text="items[2].title"></p>
+                      <p class="h-[5rem] mx-[10%] text-center text-[0.75rem] mb-[1.875rem] font-noto-sans-tc font-light leading-[160%] tracking-[0.125rem]"
+                        x-text="items[2].desc"></p>
+                      <img :src="items[2].image" class="mb-[3.375rem] w-full h-[6.25rem] object-cover" alt="">
+                    </div>
+                  </div>
+                </div>
+                <!--item 4-->
+                <div class="swiper-slide">
+                  <div class="flex justify-center items-center">
+                    <div class="flex-col">
+                      <h2 class="text-4xl font-serif mb-[1.25rem] flex items-center justify-center">
+                        <span class="font-noto-serif-hk font-bold
+                            text-[1.25rem] leading-[92%] tracking-[0.125rem] mr-[0.625rem]"
+                          x-text="items[3].step"></span>&nbsp;
+                        <span class="font-monsieur-la-doulaise font-normal
+                            text-[1.25rem] leading-[74%] tracking-[0.125rem]">step.</span>
+                      </h2>
+                      <p class="mx-[10%] text-center text-[1.25rem] mb-[1.25rem] font-noto-serif-hk font-normal leading-[130%] tracking-[0.25rem]"
+                        x-text="items[3].title"></p>
+                      <p class="h-[5rem]  mx-[10%] text-center text-[0.75rem] mb-[1.875rem] font-noto-sans-tc font-light leading-[160%] tracking-[0.125rem]"
+                        x-text="items[3].desc"></p>
+                      <img :src="items[3].image" class="mb-[3.375rem] w-full h-[6.25rem] object-cover" alt="">
+                    </div>
+                  </div>
+                </div>
+                <!--item 5-->
+                <div class="swiper-slide">
+                  <div class="flex justify-center items-center">
+                    <div class="flex-col">
+                      <h2 class="text-4xl font-serif mb-[1.25rem] flex items-center justify-center">
+                        <span class="font-noto-serif-hk font-bold
+                            text-[1.25rem] leading-[92%] tracking-[0.125rem] mr-[0.625rem]"
+                          x-text="items[4].step"></span>&nbsp;
+                        <span class="font-monsieur-la-doulaise font-normal
+                            text-[1.25rem] leading-[74%] tracking-[0.125rem]">step.</span>
+                      </h2>
+                      <p class="mx-[10%] text-center text-[1.25rem] mb-[1.25rem] font-noto-serif-hk font-normal leading-[130%] tracking-[0.25rem]"
+                        x-text="items[4].title"></p>
+                      <p class="h-[5rem] mx-[10%] text-center text-[0.75rem] mb-[1.875rem] font-noto-sans-tc font-light leading-[160%] tracking-[0.125rem]"
+                        x-text="items[4].desc"></p>
+                      <img :src="items[4].image" class="mb-[3.375rem] w-full h-[6.25rem] object-cover" alt="">
+                    </div>
+                  </div>
+                </div>
+                <!--item 6-->
+                <div class="swiper-slide">
+                  <div class="flex justify-center items-center">
+                    <div class="flex-col">
+                      <h2 class="text-4xl font-serif mb-[1.25rem] flex items-center justify-center">
+                        <span class="font-noto-serif-hk font-bold
+                            text-[1.25rem] leading-[92%] tracking-[0.125rem] mr-[0.625rem]"
+                          x-text="items[5].step"></span>&nbsp;
+                        <span class="font-monsieur-la-doulaise font-normal
+                            text-[1.25rem] leading-[74%] tracking-[0.125rem]">step.</span>
+                      </h2>
+                      <p class="mx-[10%] text-center text-[1.25rem] mb-[1.25rem] font-noto-serif-hk font-normal leading-[130%] tracking-[0.25rem]"
+                        x-text="items[5].title"></p>
+                      <p class="h-[5rem] mx-[10%] text-center text-[0.75rem] mb-[1.875rem] font-noto-sans-tc font-light leading-[160%] tracking-[0.125rem]"
+                        x-text="items[5].desc"></p>
+                      <img :src="items[5].image" class="mb-[3.375rem] w-full h-[6.25rem] object-cover" alt="">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+
+
+
+        </div>
+
+      </div>
+      <div
+        class="ml-[10%] mr-[10%] font-noto-sans-hk font-light leading-[160%] tracking-[0.25rem] text-[0.625rem] text-left md:text-right md:mr-[2.4%] md:ml-0 mt-[2.5rem] md:text-[min(1rem,16px)]">
+
+        <p>DE &amp; Co. 秉持「<span class="font-bold">日式服務</span>」的細膩與貼心，從諮詢到成品，全程細心跟進</p>
+        <p>我們<span class="font-bold">堅持價格透明，絕不強迫推銷，讓您輕鬆享受愉悅的婚紗拍攝體驗</span></p>
+      </div>
+
+
+    </section>
 
       <!-- voc -->
       <section class="py-25"
@@ -789,4 +946,17 @@
     }
 
   </script>
+  <script>
+    var swiper = new Swiper(".default-carousel", {
+    loop: true,
+    pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+    },
+    navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+    },
+    });
+    </script>
 </html>
